@@ -1,0 +1,1010 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+}
+
+header {
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    float: left;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 5vw;
+}
+
+.logo img{
+    width: 55%;
+    margin: auto;
+}
+
+@media screen and (min-width:481px) {
+    .logo {
+        width: 20vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+	.logo {
+        width: 50vw;
+    }
+}
+
+/* メニューバー */
+@media screen and (min-width: 481px) {
+    nav {
+        float:right;
+        width: 70vw;
+        height: 100px;
+        text-align: center;
+    }
+     
+    nav ul {
+        margin: 0 auto ;
+        padding: 0 auto ;
+    
+        height: 150px;
+    }
+     
+    nav ul li{
+        margin: 0 auto ;
+        clear: right;
+        list-style: none;
+        display: inline-block;
+        width: 15%; /* ここで項目の幅を指定します */
+        height: 50px;
+    
+        top: 50%;
+        left: 50%;
+        transform: translate(85%, 100%);
+    }
+     
+    nav ul li a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .change_menu li span{
+        /*絶対配置でテキストの位置を決める*/
+      position: absolute;
+      left: 50%;
+      top:0;
+        /*アニメーションの指定*/
+      transition: all .5s;
+      transform: translate(-50%, 0);/*X方向に-50% ※中央寄せにするため*/
+      /*ブロック要素にして透過なし、テキスト折り返しなし*/  
+      display: block;
+      opacity:1;
+      white-space: nowrap;
+    }
+    
+    /*差し替わるテキストの設定*/
+    .change_menu li span:nth-child(2){
+        opacity:0;/*透過0に*/
+        transform: translate(-50%,100%);/*X方向に-50% Y方向に100%*/
+    }
+    
+    /*hoverするとテキストが入れ替わる設定*/
+    .change_menu li:hover span:nth-child(1){
+        opacity:0;/*透過0に*/
+        transform: translate(-50%,-100%);/*X方向に-50% Y方向に-100%*/
+    }
+    
+    .change_menu li:hover span:nth-child(2){
+        opacity:1;/*不透明に*/
+        transform: translate(-50%, 0);/*X方向に-50% Y方向に0*/
+    }
+    
+    nav ul li img{
+        width: 60%;
+        margin: auto;
+    }
+
+    #menu-input {
+        display: none;
+    }
+    #hamburger_menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu_contents {
+        display: none;
+    }
+
+    @keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      @-webkit-keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      #menu-button {
+        position: absolute;
+        right: 2em;
+        top: 1em;
+        padding: 26px 11px;
+        z-index: 5;
+        cursor: pointer;
+        user-select: none;
+      }
+      #menu-button span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+      }
+      #menu-button span:before {
+        top: -10px;
+        visibility: visible;
+      }
+      #menu-button span:after {
+        top: 10px;
+      }
+      #menu-button span:before, #menu-button span:after {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: absolute;
+        content: "";
+        transition: all .2s ease-in-out;
+      }
+      #menu-button:hover span, #menu-button:hover span:before, #menu-button:hover span:after {
+        background: #fff;
+      }
+      
+      input[type=checkbox] {
+        display: none; 
+        
+      }
+      
+      input[type=checkbox]:checked ~ #hamburger_menu {
+        visibility: visible; 
+      }
+      
+      input[type=checkbox]:checked ~ #menu-button:hover span, input[type=checkbox]:checked ~ #menu-button span {
+        background: transparent;
+        
+        
+      }
+      input[type=checkbox]:checked ~ #menu-button span:before {
+        transform: rotate(45deg) translate(7px, 7px);
+      
+      }
+      input[type=checkbox]:checked ~ #menu-button span:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      
+      
+      }
+      
+      #hamburger_menu {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+        z-index: 2;
+        visibility: hidden;
+        position: fixed;
+      }
+      #hamburger_menu.active {
+      
+      }
+      #hamburger_menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 0;
+        list-style-type: none;
+      }
+      #hamburger_menu ul li {
+        padding: 1em;
+      }
+      #hamburger_menu ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+      #hamburger_menu ul li a:hover {
+        color: #000!important;
+      }
+}
+
+/* メニューバー ここまで */
+
+
+body{
+    /* font-family: "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic",
+                 "游ゴシック体", sans-serif, "ヒラギノ角ゴ Pro W3"; */
+    font-family: 'Georgia','ヒラギノ明朝 ProN W3';
+    line-height: 1.7;
+    color: #fff;
+    background-color: black;
+
+    animation: bugfix infinite 1s;
+    -webkit-animation: bugfix infinite 1s;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ローディング画面 */
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: black;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
+.white-loading,.colour-loading {
+    top: 45%;
+    left: 42%;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    background-color: #003300;
+    box-shadow: 0 0 5px #ccc;
+}
+		
+.white-loading {
+    animation: coloring1 2s infinite ease-in-out;
+}
+
+.colour-loading {
+    animation: coloring2 2s infinite ease-in-out;
+    animation-delay: .5s;
+    opacity: .8;
+}
+		
+@keyframes coloring1 {
+    0% {
+        background-color: #003300;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+        background-color: #440000;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+		
+@keyframes coloring2 {
+    0% {
+        background-color: #ccc;
+        opacity: .8;
+        transform: translateX(0);
+    }
+    50% {
+        background-color: #ccc;
+        opacity: .5;
+        transform: translateX(80px);
+    }
+    100% {
+        background-color: #ccc;
+        opacity: .8;
+        transform: translateX(0);
+    }
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+		
+
+
+/* index.html CSS */
+
+/* ここからチャットボットCSS */
+div.botui-app-container {
+    position: fixed;
+    height: 100vh;
+
+    right: 0;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    z-index : 200;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 986px) {
+    div.botui-app-container {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    div.botui-app-container {
+        width: 100vw;
+    }
+}
+
+
+.hamburger {
+    display : block;
+    position: fixed;
+    z-index : 300;
+    right : 3%;
+    top   : 85%;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: 0.5s all;
+    -moz-transition   : 0.5s all;
+    transition        : 0.5s all;
+
+    background-color: white;
+}
+.hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 6px;
+    background : #555;
+}
+.hamburger span:nth-child(1) {
+    top: 10px;
+}
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+.hamburger span:nth-child(3) {
+    top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+}
+.hamburger.active span:nth-child(2) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+}
+.hamburger.active span:nth-child(3) {
+    opacity: 0;
+}
+
+div.botui-app-container.active {
+    transform: translateY(0%);
+  }
+
+/* ウェルカムのdiv */
+
+.slider-wrap {
+    width: 100vw;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+  }
+
+.slide {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+
+    padding: 40px;
+}
+
+.slide-tx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: left;
+}
+
+.slide span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.slide-item {
+    position: relative;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    animation: change-img-anim 30s infinite;
+}
+
+img.slide-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.slide-item:nth-of-type(1) {
+    animation: change-img-anim-first 30s infinite;
+    animation-delay: 0s;
+}
+
+.slide-item:nth-of-type(2) {
+    animation-delay: 10s;
+}
+
+.slide-item:nth-of-type(3) {
+    animation-delay: 20s;
+}
+
+@keyframes change-img-anim-first {
+    0%{ opacity: 1;
+        transform: scale(1);}
+    30%{ opacity: 1;}
+    36%{ opacity: 1;}
+    45%{ opacity: 0;
+        transform: scale(1.2);}
+    100%{ opacity: 0;}
+}
+
+@keyframes change-img-anim {
+    0%{ opacity: 0;
+        transform: scale(1);}
+    30%{ opacity: 1;}
+    36%{ opacity: 1;}
+    45%{ opacity: 0;
+         transform: scale(1.2);}
+    100%{ opacity: 0;}
+}
+
+@media screen and (min-width:986px) {
+    .slider-wrap {
+        height: 100vh;
+        justify-content: center;
+    
+        position: relative;
+        clear: both;
+      }
+    
+    .slide {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .slider-wrap {
+        padding-top: 100px;
+        height: auto;
+    }
+
+    .slide {
+        margin: auto;
+    }
+
+}
+
+/* ここまで最初のdiv */
+/* 料理とワインのメニューリンク */
+
+div.menu {
+    background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+    width: 100vw;
+    padding-bottom: 10%;
+
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+div.dish-wine {
+    height: 100vh;
+
+    overflow: hidden;
+    position: relative;
+}
+
+div.dish-wine img {
+    height: 100vh;
+    
+    margin: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    object-fit: cover;
+
+    display: block;
+}
+
+.fadeUp {
+    transform: translateY(100px);
+    transition: all 1.5s ease-in;
+    opacity: 0;
+  }
+.delay {
+    animation-delay: 1s;
+}
+
+  /* 画面に入った時の動き */
+.fadeUp.blockIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-link{
+    display: block; 
+    position: relative;
+    text-decoration: none;
+}
+.menu-link img{
+    display: block;
+    width: 100%;
+}
+.menu-link:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background:#000;/*好みの色に変えてください。*/
+    opacity: 0;
+    transition: 0.3s;
+}
+.menu-link:after{
+    content: "GO TO THE MENU";/*好みの文章に変更してください。*/
+    display: block;
+    color:#fff;
+    line-height: 48px;
+    width: 200px;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1em;
+    margin-left: -90px;
+    opacity: 0;
+    z-index: 3;
+    transition: 0.3s;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+.menu-link:hover:before{
+    opacity: 0.5;
+}
+.menu-link:hover:after{
+    opacity: 1;
+    margin-top: -0.5em;
+}
+
+@media screen and (min-width:481px) /*for PC*/{
+    div.menu {
+        height: 100vh;
+    }
+
+    div.dish-wine {
+        width: 50vw;
+    }
+    
+    div.dish-wine img {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 480px) /*for PHONE*/{
+    div.menu {
+        height: auto;
+    }
+
+    div.dish-wine {
+        width: 100vw;
+    }
+    
+    div.dish-wine img {
+        width: 100vw;
+    }
+}
+
+/* ここまで料理・ワインリンク */
+
+/* イタリア料理について */
+div.top-contents1 {
+    background-image: url(../images/counter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top-contents1 section {
+    width: 100%;
+    padding: 10%;
+
+    position: absolute;
+    top: 50%;        
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top-contents1 h2 {
+    padding-bottom: 3%;
+}
+
+@media screen and (min-width:481px) /*for PC*/{
+}
+
+@media screen and (max-width:480px) /*for PC*/{
+}
+
+/* ここまでイタリア料理について */
+
+/* お店が大切にしている3つのこと */
+.details {
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.details p {
+    width: 100%;
+    position: absolute;
+    top: 50%;        
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 5%;
+}
+
+.details span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.details a {
+    line-height: 150px;
+    color: aliceblue;
+}
+
+.fadeUp2 {
+    transform: translateY(100px);
+    transition: all 1.5s ease-in;
+    opacity: 0;
+  }
+  /* 画面に入った時の動き */
+.fadeUp2.blockIn {
+    opacity: 1;
+    position: relative;
+    top: 50%;        
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.delay2 {
+    animation-delay: 3s;
+}
+
+@media screen and (min-width:481px) /*for PC*/{
+    .top-contents1 {
+        height: 100vh;
+    }
+
+    .details {
+        width: 30%;
+    }
+    
+    .details a {
+        transition: .3s;
+    }
+
+    .details a::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 0;
+        height: 1px;/*下線の太さ*/
+        background-color:#fff ;/*下線の色*/
+        transition: .3s;
+    }
+    
+    .details a:hover::after {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:480px) /*for PC*/{
+    .top-contents1 {
+        height: 300vh;
+    }
+
+    .details {
+        width: 100%;
+    }
+}
+
+/* ここまでお店が大切にしていること3つ */
+
+/* footer */
+footer {
+    width: 100vw;
+
+    position: relative;
+}
+
+span.address-name {
+    font-size: 17px;
+}
+
+.address-name span {
+    font-size: 35px;
+    letter-spacing: 0.08em;
+}
+
+div.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+div.info-ex {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.info-ex section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-ex h3 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-bottom: solid 2px #fff;
+}
+
+.info-ex li {
+    line-height: 35px;
+    list-style-type: none;
+}
+
+.info-ex iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sns-center {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.opening_hours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li.hours_name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+span.time_right {
+    font-weight: normal;
+}
+
+.link_reserve {
+    color: aliceblue;
+}
+
+.sns-center span {
+    font-weight: normal;
+}
+
+div.sns-link {
+    width: 30%;
+    height: 30%;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sns-link img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+@media screen and (min-width:986px) /*for PC*/{
+    span.address-name {
+        width: 90vw;
+        height: 10vh;
+    
+        position: absolute;
+        top: 120px;
+        left: 100px;
+    }
+
+    div.info {
+        width: 100vw;    
+    }
+    
+    .info_h_1 {
+        height: 100vh;
+    }
+    
+    .info_h_2 {
+        height: 80vh;
+    }
+    
+    .info_h_3 {
+        height: 60vh;
+    }
+    
+    div.info-ex {
+        width: 40vw;
+    }
+    
+    .info-ex section {
+        width: 60%;
+    }
+    
+    .info-ex iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 70%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width:985px) /*for PC*/{
+    span.address-name {
+        width: 50vw;
+        height: 50vh;
+        text-align: center;
+
+        padding-top: 10%;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info_h_1 {
+        height: 150vh;
+    }
+
+    .info_h_2 {
+        height: 110vh;
+    }
+
+    .info_h_3 {
+        height: 70vh;
+    }
+
+    div.info-ex {
+        width: 100vw;
+    }
+
+    .info-ex section {
+        width: 90%;
+    }
+
+    .info-ex iframe {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 85%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* div.sns-bg1 {
+    background-image: url(/images/line-logo.png);
+}
+
+div.sns-bg2 {
+    background-image: url(/images/instagram-logo.png);
+}
+
+div.sns-bg3 {
+    background-image: url(/images/facebook-logo.png);
+} */
+/* ここまでfooter */

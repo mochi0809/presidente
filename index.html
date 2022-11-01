@@ -1,0 +1,270 @@
+<!doctype html>
+    <html lang="ja">
+        <head>
+            <meta charset="UTF-8">
+            <title>RISTORANTE IL PRESIDENTE</title>
+            <meta name="description" content="岐阜駅から徒歩5分のイタリアンレストラン">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+            <link rel="stylesheet" href="css/index.css"/>
+            
+            <!-- BotUI CSS -->
+            <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+            <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+        </head>
+
+        <body>
+            <!-- ローディング画面 -->
+            <div id="loading">
+                <div class="white-loading"></div>
+                <div class="colour-loading"></div>
+            </div>
+
+            <!-- メニューバー -->
+            <header>
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+                </div>
+
+                <nav class="menu_contents">
+                    <ul class="change_menu">
+                        <li class="change_text">
+                            <a href=index.html><span>TOP</span><span>トップページ</span></a>
+                        </li>
+                        <li class="change_text">
+                            <a href=aboutus.html><span>ABOUT US</span><span>私たちについて</span></a>
+                        </li>
+                        <li class="change_text">
+                            <a href=dishes-menu.html><span>DISHES</span><span>お食事</span></a>
+                        </li>
+                        <li class="change_text">
+                            <a href=wine-menu.html><span>DRINK</span><span>お飲み物</span></a>
+                        </li>
+                        <li class="change_text">
+                            <a href=contacts.html><span>CONTACT</span><span>お問い合わせ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <input type="checkbox" id="menu-input" />
+                <label for="menu-input" id="menu-button"><span></span></label>
+                <div id="hamburger_menu">
+                    <ul>
+                        <li><a href=index.html>PRIMA PAGINA</a></li>
+                        <li><a href=aboutus.html>SU DI NOI</a></li>
+                        <li><a href=dishes-menu.html>PIATTO</a></li>
+                        <li><a href=wine-menu.html>BEVANDA</a></li>
+                        <li> <a href=contacts.html>CONTATTO</a></li>
+                    </ul>
+                </div>
+
+                    <!-- チャットボット -->
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="botui-app-container" id="search-repo">
+                        <bot-ui></bot-ui>
+                    </div>
+            </header>
+
+            <!-- メイン内容 -->
+            <div class="slider-wrap">
+                <div class="slide">
+                    <p class="slide-tx"><span>"Buono!"</span><br>を<br>ここ、岐阜で。</p>
+                </div>
+                <div class="slide">
+                    <div class="slide-item">
+                        <img class="slide-photo" src="images/scenery.jpg"   alt="パスタ">
+                    </div>
+                    <div  class="slide-item">
+                        <img class="slide-photo" src="images/noon-inside2.jpg"  alt="仕上げ">
+                    </div>
+                    <div  class="slide-item">
+                        <img class="slide-photo" src="images/front-photo.gif"    alt="店">
+                    </div>
+                </div>
+                <div class="slide">
+                    <h3 class="slide-tx">RISTORANTE<br>IL<br>PRESIDENTE</h3>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="dish-wine fadeUp">
+                    <a href=dishes-menu.html class="menu-link">
+                        <img src="images/t-steak.jpg" alt="食事">
+                    </a>
+                </div>
+                <div class="dish-wine fadeUp delay">
+                    <a href=wine-menu.html class="menu-link">
+                        <img src="images/wine.jpg" alt="ワイン">
+                    </a>
+                </div>
+            </div>
+
+            <div class="top-contents1 screen_height">
+                <section>
+                    <h2>イタリア料理について</h2>
+                    <p>イタリア料理は、地方によって様々な料理が存在しています。
+                        <br>なので、「イタリア料理」というよりは、「トスカーナ料理」「ナポリ料理」
+                        などと表現するのがイタリアでは一般的です。
+                        <br>
+                        <br>そんな中、私たちプレジデンテでは中部イタリアで修行をしたシェフが
+                        現地で学んだレシピを元に、イタリアの様々な郷土料理をご提供いたします。
+                    </p>
+                </section>
+            </div>
+
+            <div class="top-contents1">
+                <div class="details">
+                    <p class="fadeUp2">お客様に経験していただく<br><span>価値</span>について</p>
+                </div>
+                <div class="details">
+                    <p class="fadeUp2 delay">お客様に経験していただく<br><span>感動</span>について</p>
+                </div>
+                <div class="details">
+                    <p class="fadeUp2 delay1">お客様に経験していただく<br><span>楽しさ</span>について</p>
+                </div>
+            </div>
+
+            <div class="top-contents1">
+                <div class="details">
+                    <p><span>価値</span>とは、本物の価値。
+                        <br>オーナー自らが経験してきた本場イタリアの料理、文化、雰囲気を全てPRESIDENTEに落とし込み、お客様に提供します。
+                        <br><a href="aboutus.html#recepi_kodawari">詳しく知る</a></p>
+                </div>
+                <div class="details">
+                    <p><span>感動</span>とは、情。
+                        <br>私たちは、全てのことに「おもてなし」の心、愛情を持って取り組んでいます。
+                            大切なお客様に感動していただくことが、私たちの喜びです。
+                        <br><a href="aboutus.html#plate_kodawari">詳しく知る</a></p>
+                </div>
+                <div class="details">
+                    <p><span>楽しさ</span>とは、美味しさ。
+                        <br>美味しいは楽しい。まずは食材が美味しい。シェフのこだわり抜いた食材と最高の料理に仕上げてお客様に提供します。
+                            私たちはこの料理をもってお客様の幸せにアクセスします。<br><a href="aboutus.html#ingredient_kodawari">詳しく知る</a></p>
+                </div>
+            </div>
+
+            <footer>
+                <span class="address-name"><span>I</span>nformazioni / <span>店</span>舗情報</span>
+                <div class="info info_h_1">
+                    <div class="info-ex">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52034.4247055274!2d136.69038666777163!3d35.40149404652808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003a937f078edab%3A0xc1ef987ffcda40e7!2sRistorante%20il%20Presidente!5e0!3m2!1sja!2sjp!4v1662552228172!5m2!1sja!2sjp"
+                            width="400"
+                            height="400"
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="info-ex">
+                        <section>
+                            <h3>INDIRIZZO / 住所</h3>
+                            <ul>
+                                <li>〒500-8842</li>
+                                <li>岐阜県岐阜市金町8-10 荒井ビル 1F</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="info info_h_2">
+                    <div class="info-ex">
+                        <section>
+                            <h3>ORARI / 営業時間</h3>
+                            <ul>
+                                <li>ランチタイム、ディナータイムとございます。</li>
+                                <li>また、土・日限定のカフェタイムもございますので、是非ご利用くださいませ。</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="info-ex">
+                        <ul class="opening_hours">
+                            <li>＜平日・土日祝＞</li>
+                            <li class="hours_name">
+                                <span class="time_right">A PRANZO ＜ランチ＞ - 11:00 ~ 15:00 (L.O. 14:00)</span>
+                            </li>
+                            <li class="hours_name">
+                                <span class="time_right">CENA ＜ディナー＞ - 18:00 ~ 24:00 (L.O. 23:00)</span>
+                            </li>
+                            <br>
+                            <li>＜土曜日・日曜日限定＞</li>
+                            <li class="hours_name">
+                                <span class="time_right">CAFFÈ ＜カフェ＞ - 14:00 ~ 17:00 (L.O. 16:00)</span>
+                            </li>
+                            <br>
+                            <li>＜定休日＞</li>
+                            <li>火曜日</li>
+                            <li>その他不定休日もございますので、</li>
+                            <li>お手数ですが、詳しくは各種SNSをご覧ください。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info info_h_3">
+                    <div class="info-ex">
+                        <section>
+                            <h3>NUMERO DI TELEFONO / 電話番号</h3>
+                            <ul>
+                                <li>ご予約・お問い合わせは</li>
+                                <li>以下のページをご参照ください</li>
+                                <li><a class="link_reserve" href="contacts.html">「お問い合わせ・ご予約」のページへ
+                                    <img src="images/gadget24.png" width=15px></a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="info-ex">
+                        <h2 class="sns-center">TEL.<span>058-215-5626</span></h2>
+                    </div>
+                </div>
+
+                <div class="info info_h_3">
+                    <div class="info-ex">
+                        <section>
+                            <h3>SOCIAL NETWORK / 各種SNS</h3>
+                            <ul>
+                                <li>随時更新中</li>
+                                <li>最新情報は公式SNSにて発信</li>
+                                <li>アイコンをクリックまたはタップで各種SNSに遷移します</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="info-ex">
+                        <div class="sns-link">
+                            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=514gupyq">
+                                <img src="images/line-logo.png">
+                            </a>
+                        </div>
+                        <div class="sns-link">
+                            <a href="https://www.instagram.com/presidente_0913">
+                                <img src="images/instagram-logo.png">
+                            </a>
+                        </div>
+                        <div class="sns-link">
+                            <a href="https://m.facebook.com/presidente.ywc">
+                                <img src="images/facebook-logo.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </footer>
+
+            <!-- script -->
+            <script src="js/loading.js"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/fadein.js"></script>
+            <script src="js/fadein2.js"></script>
+
+            <!-- Bot script -->
+            <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+            <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+            <script src="../presidente/js/bot.js"></script>
+        </body>
+    </html>

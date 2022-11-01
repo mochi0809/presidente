@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RISTORANTE IL PRESIDENTE</title>
+        <meta name="description" content="岐阜駅から徒歩5分のイタリアンレストラン">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+        <!-- CSS -->
+        <link href="css/dishes-menu.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+        <!-- BotUI CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    </head>
+
+    <body>
+        <div id="loading">
+            <div class="white-loading"></div>
+            <div class="colour-loading"></div>
+        </div>
+
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+            </div>
+
+            <nav class="menu_contents">
+                <ul class="change_menu">
+                    <li class="change_text">
+                        <a href=index.html><span>TOP</span><span>トップページ</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=aboutus.html><span>ABOUT US</span><span>私たちについて</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=dishes-menu.html><span>DISHES</span><span>お食事</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=wine-menu.html><span>DRINK</span><span>お飲み物</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=contacts.html><span>CONTACT</span><span>お問い合わせ</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" id="menu-input" />
+            <label for="menu-input" id="menu-button"><span></span></label>
+            <div id="hamburger_menu">
+                <ul>
+                    <li><a href=index.html>TOP</a></li>
+                    <li><a href=aboutus.html>ABOUT US</a></li>
+                    <li><a href=dishes-menu.html>DISHES MENU</a></li>
+                    <li><a href=wine-menu.html>WINE MENU</a></li>
+                    <li> <a href=contacts.html>CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!-- チャットボット -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="botui-app-container" id="search-repo">
+                <bot-ui></bot-ui>
+            </div>
+        </header>
+
+        <div class="lunch-menu">
+            <div class="course-tag">
+                <div class="other-courses tag-black">
+                    <h5>Lunch Menu</h5>
+                    <span>ランチメニュー</span>
+
+                    <p>コース料理のほかにアラカルトのご用意もございますので、
+                        お気軽にお申し付けください。
+                    </p>
+                </div>
+            </div>
+
+            <div class="course-contents fadeUp3">
+                <div class="lunch-most">
+                    <p>人気No.1ランチ</p>
+                </div>
+
+                <div class="course-tag-lunch">
+                    <div class="other-courses-lunch">
+                        <p class="lunch-tag">The Course Lunch A <span>- ¥2,000</span></p>
+                        <p class="lunch-text">前菜からドルチェまで気軽にお楽しみいただける、一番人気のランチコースです。</p>
+                    </div>
+                </div>
+                <div class="courseLA">
+                    <div class="lunchA bg1 turning">
+                        <div class="latext turning_front">
+                            <h5><span>A</span>NTIPASTO</h5>
+                            <h6>前菜盛り合わせ</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>
+                        </div>
+                        <div class="latext turning_back">
+                                <p>プレジデンテでしか味わえない前菜をお召し上がりください。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg1 turning">
+                        <div class="latext turning_front">
+                            <h5><span>I</span>NSALATA</h5>
+                            <h6>土磨自然農園のサラダ</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>                        
+                        </div>
+                        <div class="latext turning_back">
+                                <p>10年以上のお付き合いがある農家さんからの野菜を使ったサラダです。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg2 turning">
+                        <div class="latext turning_front">
+                            <h5><span>Z</span>UPPA</h5>
+                            <h6>季節のスープ</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>                            
+                        </div>
+                        <div class="latext turning_back">
+                                <p>口直しという意味のあるスープを是非ご堪能ください。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg2 turning">
+                        <div class="latext turning_front">
+                            <h5><span>P</span>ANE</h5>
+                            <h6>自家製バゲット</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>                            
+                        </div>
+                        <div class="latext turning_back">
+                                <p>バゲットかフォカッチャか、何が出るかはその日のお楽しみです。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg2 turning">
+                        <div class="latext turning_front">
+                            <h5><span>P</span>RIMO</h5>
+                            <h6>季節のパスタ</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>                            
+                        </div>
+                        <div class="latext turning_back">
+                                <p class="turning_center">「最初の一皿」という意味の"Primo Piatto"をお楽しみください。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg3 turning">
+                        <div class="latext turning_front">
+                            <h5><span>D</span>OLCE</h5>
+                            <h6>デザート</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                                <div class="line02"></div>
+                            </div>                            
+                        </div>
+                        <div class="latext turning_back">
+                                <p>季節によって変わるドルチェをどうぞ。</p>
+                        </div>
+                    </div>
+                    <div class="lunchA bg3 turning">
+                        <div class="latext turning_front">
+                            <h5><span>B</span>EVANDA</h5>
+                            <h6>食後の飲み物</h6>
+                            <div class="yazirusi">
+                                <div class="line01"></div>
+                            </div>                            
+                        </div>
+                        <div class="latext turning_back">
+                                <p>フレーバーを豊富に揃えております紅茶を飲んでみませんか？</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-tag">
+                <div class="other-courses tag-black">
+                    <h5>Other Lunch Menu</h5>
+                    <span>その他のランチメニュー</span>
+                </div>
+            </div>
+
+            <div class="course-contents1">
+                <section class="course-lunch pasta_lunch">
+                    <div class="label1"><p>Pasta Lunch <span class="price">- ¥1,500</span></p></div>
+                    <div class="label1 for-logo">
+                        <ul>
+                            <li><span>INSALATA</span></li>
+                            <li>グリーンサラダ</li>
+                            <br>
+                            <li><span>PANE</span></li>
+                            <li>自家製パン</li>
+                            <br>
+                            <li><span>ZUPPA</span></li>
+                            <li>季節のスープ</li>
+                            <br>
+                            <li><span>PRIMO</span></li>
+                            <li>季節のパスタ</li>
+                            <br>
+                            <li><span>DOLCE(+200円)</span></li>
+                            <li>デザート</li>
+                            <br>
+                            <li><span>BEVANDA(+100円)</span></li>
+                            <li>食後のお飲み物</li>
+                        </ul>
+                        <div class="pl_logo"><img src="images/logo.png"></div>
+                    </div>
+                </section>
+
+                <section class="course-lunch cl_h">
+                    <div class="label1"><p>Course Lunch B <span class="price">- ¥3,500</span></p></div>
+                    <div class="label1 for-logo">
+                        <ul>
+                            <li><span>STUZZICHINO</span></li>
+                            <li>口どり</li>
+                            <br>
+                            <li><span>ANTIPASTO</span></li>
+                            <li>前菜</li>
+                            <br>
+                            <li><span>ZUPPA</span></li>
+                            <li>季節のスープ</li>
+                            <br>
+                            <li><span>PANE</span></li>
+                            <li>自家製パン</li>
+                            <br>
+                            <li><span>PRIMO</span></li>
+                            <li>季節のパスタ</li>
+                            <br>
+                            <li><span>SECONDO</span></li>
+                            <li>メイン料理</li>
+                            <br>
+                            <li><span>DOLCE</span></li>
+                            <li>デザート</li>
+                            <br>
+                            <li><span>BEVANDA</span></li>
+                            <li>食後のお飲み物</li>
+                        </ul>
+                        <div class="menu-logo"><img src="images/logo.png"></div>
+                    </div>
+                </section>
+
+                <section class="course-lunch cl_h">
+                    <div class="label1"><p>Course Lunch C <span class="price">- ¥5,000</span></p></div>
+                    <div class="label1 for-logo">
+                        <ul>
+                            <li><span>APERITIVO</span></li>
+                            <li>お通し</li>
+                            <br>
+                            <li><span>STUZZICHINO</span></li>
+                            <li>口どり</li>
+                            <br>
+                            <li><span>ANTIPASTO</span></li>
+                            <li>前菜</li>
+                            <br>
+                            <li><span>PESCE</span></li>
+                            <li>魚料理</li>
+                            <br>
+                            <li><span>PANE</span></li>
+                            <li>自家製パン</li>
+                            <br>
+                            <li><span>PRIMO</span></li>
+                            <li>季節のパスタ</li>
+                            <br>
+                            <li><span>CARNE</span></li>
+                            <li>肉料理</li>
+                            <br>
+                            <li><span>DOLCE</span></li>
+                            <li>デザート</li>
+                            <br>
+                            <li><span>BEVANDA</span></li>
+                            <li>食後のお飲み物</li>
+                        </ul>
+                        <div class="menu-logo"><img src="images/logo.png"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <h5 class="most-popular">The Most Popular Dish</h5>
+                <span>一押しメニュー</span>
+            </div>
+        </div>
+        
+        <div class="area js-area">
+        <div class="recommend js-recommend">
+            <div class="rec-dish js-rec-dish">
+                <div class="dish"><img class="dish_photo" src="../presidente/images/t-bone.jpg"></div>
+                <div class="dish">
+                    <section>
+                        <h3>ビステッカ・アッラ・フィオレンティーナ</h3>
+                        <p>
+                            骨付きのステーキで、日本では「Tボーンステーキ」と呼ばれることもあります。
+                            一方はサーロイン、もう一方はヒレというように、二つの部位を同時に味わえるのが特徴で、
+                            イタリアのフィレンツェのように炭火でお肉を焼いて提供いたします。
+                            <br>
+                        </p>
+                        <h5>ビステッカ → ビーフステーキ、フィオレンティーナ → フィレンツェ風の
+                            という意味があります。
+                        </h5>
+                    </section>
+                </div>
+            </div>
+
+            <div class="rec-dish js-rec-dish">
+                <div class="dish">
+                    <img class="dish_photo" src="../presidente/images/tuna.jpg">
+                </div>
+                <div class="dish">
+                    <section>
+                        <h3>マグロのタルタルとナスのカポナータ</h3>
+                        <p>
+                            シチリア料理の一つで、角切りにしたマグロをケッパーとオリーブで味をつけた
+                            一品です。マグロの下にありますナスのカポナータと併せてお召し上がりいただきますと、
+                            マグロがカポナータの甘味と酸味と絶妙にマッチして、それぞれでお召し上がり
+                            いただくよりもお楽しみいただけます。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="rec-dish js-rec-dish">
+                <div class="dish">
+                    <img class="dish_photo" src="../presidente/images/seaUrchinPasta.jpg">
+                </div>
+                <div class="dish">
+                    <section>
+                        <h3>生ウニのクリームパスタ</h3>
+                        <p>
+                            トマトと生クリームをベースにしたソースと生ウニを使った贅沢な一品です。
+                            パスタは生パスタを使用しており、乾麺とは違った食感や味わいをお楽しみいただけます。
+                            季節問わず、パスタの中では人気メニューとなっておりますので、
+                            是非一度お試しくださいませ。
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="rec-dish js-rec-dish">
+                <div class="dish">
+                    <img class="dish_photo" src="../presidente/images/gerato.jpg">
+                </div>
+                <div class="dish">
+                    <section>
+                        <h3>自家製ジェラート</h3>
+                        <p>
+                            プレジデンテが自信を持って提供しておりますドルチェの一つです。
+                            他にはないジェラートのなめらかさをご堪能くださいませ。
+                            味は「ピスタチオ・はちみつ・チョコレート・キャラメル」を揃えております。
+                            また季節によって違った味も登場いたします。
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses">
+                <h5>Dinner Courses List</h5>
+                <span>ディナーコース一覧</span>
+            </div>
+        </div>
+
+        <div class="course_explain">
+            <section>
+                <h3>コースについて</h3>
+                <p>私たちプレジデンテが扱うコースは、イタリアの古典的なコース料理の流れに則ったもので、ワインに併せて作られております。
+                    <br>その特徴が顕著に表れておりますのが　<span>"Course C"</span>, <span>"Course Special"</span>　の2つで、
+                    「スパークリングワイン→白ワイン→赤ワイン」の順でお楽しみいただけるような形でございます。
+                    是非、コース料理を召し上がる際にはワインも併せてお楽しみください。
+                </p>
+                <p>ワインの詳細は<a href=wine-menu.html>こちら</a>にございます。</p>
+            </section>
+        </div>
+
+        <div class="course">
+            <div class="label label-fixed">
+                <p><span>Course A</span> - ¥4,200</p>
+            </div>
+            <div class="label">
+                <ul>
+                    <li><span>ANTIPASTO</span></li>
+                    <li>（下記からお好きな前菜を１皿お選びください。１皿追加の場合は+800円）</li>
+                    <li>鮮魚のカルパッチョ</li>
+                    <li>フルーツトマトとモッツァレラのカプレーゼ</li>
+                    <li>パルマ産生ハムとルッコラ</li>
+                    <br>
+                    <li><span>ZUPPA</span></li>
+                    <li>じゃがいもの冷製スープ</li>
+                    <br>
+                    <li><span>PRIMO PIATTO</span></li>
+                    <li>（下記からお好きなパスタを１皿お選びください。１皿追加の場合は+1000円）</li>
+                    <li>イワシとウイキョウのパスタ　シチリア風</li>
+                    <li>スズキとズッキーニのプッタネスカ</li>
+                    <li>自家製リコッタチーズと枝豆のラビオリ</li>
+                    <br>
+                    <li><span>SECONDO PIATTO</span></li>
+                    <li>（下記からお好きなお料理を１皿お選びください。１皿追加の場合は+1500円）</li>
+                    <li>奥美濃古地鶏の胸肉のトマト煮込み</li>
+                    <li>美濃ヘルシーポークのバルサミコソテー</li>
+                    <li>イサキとムール貝のスープ仕立て　レモン風味</li>
+                    <br>
+                    <li><span>DOLCE</span></li>
+                    <li>（下記からお好きなドルチェを１皿お選びください。）</li>
+                    <li>自家製ジェラート</li>
+                    <li>ティラミス</li>
+                    <li>チョコレートのサラミ</li>
+                    <br>
+                    <li><span>BEVANDA</span></li>
+                    <li>（下記からお好きなお飲み物を１つお選びください）</li>
+                    <li>エスプレッソ</li>
+                    <li>コーヒー</li>
+                    <li>紅茶 各種フレーバーからお選び頂けます</li>
+                    <br>
+                    <li><span>DIGESTIVO（+500円~）<span></li>
+                    <li>グラッパ各種、自家製ゆずチェッロ</li>
+                    <br>
+                    <li>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</li>
+                    <li>※季節によってコース内のお料理は異なります。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses">
+                <h5>Other Courses</h5>
+                <span>その他のコース</span>
+            </div>
+        </div>
+
+        <div class="course-contents1">
+            <section class="course1">
+                <div class="label1"><p>Course B <span class="price">- ¥6,400</span></p></div>
+                <div class="label1">
+                    <ul>
+                        <li><span>STUZZICHINO</span></li>
+                        <br>
+                        <li><span>ANTIPASTO</span></li>
+                        <br>
+                        <li><span>PRIMO PIATTO</span></li>
+                        <br>
+                        <li><span>INSALATA</span></li>
+                        <br>
+                        <li><span>SECONDO PIATTO</span></li>
+                        <br>
+                        <li><span>DOLCE</span></li>
+                        <br>
+                        <li><span>BEVANDA</span></li>
+                        <br>
+                        <li><span>DIGESTIVO（+500円~）</span></li>
+                        <br>
+                        <li>※メニューは全て税込です。<br>テーブルチャージとして300円/人申し受けます。</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="course1">
+                <div class="label1"><p>Course C <span class="price">- ¥8,800</span></p></div>
+                <div class="label1">
+                    <ul>
+                        <li><span>STUZZICHINO</span></li>
+                        <br>
+                        <li><span>ANTIPASTO</span></li>
+                        <br>
+                        <li><span>PESCE</span></li>
+                        <br>
+                        <li><span>PRIMO PIATTO 1</span></li>
+                        <br>
+                        <li><span>PRIMO PIATTO 2</span></li>
+                        <br>
+                        <li><span>INSALATA</span></li>
+                        <br>
+                        <li><span>SECONDO PIATTO</span></li>
+                        <br>
+                        <li><span>DOLCE</span></li>
+                        <br>
+                        <li><span>BEVANDA</span></li>
+                        <br>
+                        <li><span>DIGESTIVO（+500円~）</span></li>
+                        <br>
+                        <li>※メニューは全て税込です。<br>テーブルチャージとして300円/人申し受けます。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="course1">
+                <div class="label1"><p>Course Special <span class="price">- ¥15,000</span></p><h5>（3日前までにご予約ください）</h5></div>
+                <div class="label1">
+                    <ul>
+                        <li><span>STUZZICHINO</span></li>
+                        <br>
+                        <li><span>APERITIVO</span></li>
+                        <br>
+                        <li><span>ANTIPASTO FREDDO</span></li>
+                        <br>
+                        <li><span>ANTIPASTO CARDO</span></li>
+                        <br>
+                        <li><span>PRIMO PIATTO 1</span></li>
+                        <br>
+                        <li><span>PRIMO PIATTO 2</span></li>
+                        <br>
+                        <li><span>PESCE</span></li>
+                        <br>
+                        <li><span>CARNE</span></li>
+                        <br>
+                        <li><span>DOLCE</span></li>
+                        <br>
+                        <li><span>BEVANDA</span></li>
+                        <br>
+                        <li><span>DIGESTIVO</span></li>
+                        <br>
+                        <li>※メニューは全て税込です。<br>テーブルチャージとして300円/人申し受けます。</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses">
+                <h5>Alacalt</h5>
+                <span>一品料理</span>
+            </div>
+        </div>
+
+        <div class="alacalt-menu">
+            <section class="alacalt">
+                <h3>ANTIPASTO</h3>
+                <dl class="dish-list">
+                    <div>
+                        <dt>前菜の盛り合わせ（1人前）</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>マグロのタルタルとナスのカポナータ</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>鮮魚のカルパッチョ</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>生ハムとルッコラのサラダ</dt><dd>1,200</dd>
+                    </div>
+                    <div>
+                        <dt>土磨自然農園の野菜を使ったサラダ</dt><dd>1,300</dd>
+                    </div>
+                    <div>
+                        <dt>土磨自然農園の野菜を使ったバーニャカウダ</dt><dd>1,400</dd>
+                    </div>
+                    <div>
+                        <dt>飛騨高山のモッツァレラとフルーツトマトのカプレーゼ</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>馬肉のカルパッチョ ゴルゴンゾーラソース</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>生ハムとサラミの盛り合わせ</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>自家製サルシッチャ</dt><dd>1,300</dd>
+                    </div>
+                    <div>
+                        <dt>鶏レバーのペースト バゲット添え</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>ムール貝の白ワイン蒸し</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>トリッパのトマト煮込み</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>自家製リコッタチーズ</dt><dd>680</dd>
+                    </div>
+                    <div>
+                        <dt>イタリア産チーズの盛り合わせ</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>じゃがいもの冷製スープ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="alacalt">
+                <h3>PRIMO</h3>
+                <dl class="dish-list">
+                    <div>
+                        <dt>ペペロンチーノ</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>生ハムとルッコラのペペロンチーノ</dt><dd>1,400</dd>
+                    </div>
+                    <div>
+                        <dt>天然鮎と枝豆のペペロンチーノ</dt><dd>1,500</dd>
+                    </div>
+                    <div>
+                        <dt>アワビとズッキーニのペペロンチーノ</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>イワシとウイキョウのパスタ シチリア風</dt><dd>1,400</dd>
+                    </div>
+                    <div>
+                        <dt>海老とトマトとルッコラのパスタ</dt><dd>1,400</dd>
+                    </div>
+                    <div>
+                        <dt>ペンネアラビアータ</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>飛騨高山のモッツァレラとバジルのトマトソース</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>海老とズッキーニのクリームソース 自家製タリアテッレ</dt><dd>1,500</dd>
+                    </div>
+                    <div>
+                        <dt>サルシッチャとパプリカのクリームソース 自家製パッパルデッレ</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>ゴルゴンゾーラとクルミのクリームペンネ</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>自家製パンチェッタを使ったカルボナーラ</dt><dd>1,300</dd>
+                    </div>
+                    <div>
+                        <dt>ピチのカーチョ エ ペペ</dt><dd>1,100</dd>
+                    </div>
+                    <div>
+                        <dt>ボロネーゼ 自家製パッパルデッレ</dt><dd>1,500</dd>
+                    </div>
+                    <div>
+                        <dt>ウサギと椎茸ブラザーズの椎茸のラグー 自家製パッパルデッレ</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>イカ墨のパスタ</dt><dd>1,500</dd>
+                    </div>
+                    <div>
+                        <dt>ペスカトーレ （ビアンコ or ロッソ）</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>生ウニのクリームパスタ 自家製タリアテッレ</dt><dd>2,200</dd>
+                    </div>
+                    <div>
+                        <dt>オマール海老とチェリートマトのパスタ 自家製タリオリーニ</dt><dd>3,800</dd>
+                    </div>
+                    <div>
+                        <dt>自家製リコッタチーズと枝豆のラビオリ</dt><dd>1,600</dd>
+                    </div>
+                    <div>
+                        <dt>自家製じゃがいものニョッキ トマトソース</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>自家製じゃがいものニョッキ ゴルゴンゾーラ</dt><dd>1,200</dd>
+                    </div>
+                    <div>
+                        <dt>天然鮎とズッキーニのリゾット</dt><dd>1,500</dd>
+                    </div>
+                    <div>
+                        <dt>パルミジャーノのリゾット</dt><dd>1,100</dd>
+                    </div>
+                    <div>
+                        <dt>ムール貝とズッキーニのトマトリゾット</dt><dd>1,300</dd>
+                    </div>
+                    <div>
+                        <dt>自家製サルシッチャと枝豆のリゾット</dt><dd>1,400</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </section>
+        </div>
+
+        <div class="alacalt-menu">
+            <section class="alacalt">
+                <h3>SECONDO</h3>
+                <dl class="dish-list">
+                    <div>
+                        <dt>T-ボーンステーキ(700gからご注文を承ります。)</dt><dd>980/100g</dd>
+                    </div>
+                    <div>
+                        <dt>マグロのレアグリル シチリア風</dt><dd>2,200</dd>
+                    </div>
+                    <div>
+                        <dt>スズキと夏野菜のソテー アンチョビバターソース</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>イサキとムール貝のソテー 白ワインソース</dt><dd>1,800</dd>
+                    </div>
+                    <div>
+                        <dt>奥飛騨チョウザメと魚介のブイヤベース</dt><dd>2,400</dd>
+                    </div>
+                    <div>
+                        <dt>アクアパッツァ</dt><dd>2,800</dd>
+                    </div>
+                    <div>
+                        <dt>オマール海老と雲丹のオーブン焼き</dt><dd>4,200</dd>
+                    </div>
+                    <div>
+                        <dt>フランス ランド産仔鳩のオーブン焼き　マルサラ酒のソース</dt><dd>3,200</dd>
+                    </div>
+                    <div>
+                        <dt>ヴェネト州産ウサギの白ワイン煮込み</dt><dd>3,200</dd>
+                    </div>
+                    <div>
+                        <dt>奥美濃古地鶏とズッキーニのトマト煮込み</dt><dd>2,300</dd>
+                    </div>
+                    <div>
+                        <dt>美濃ヘルシーポークとパプリカのバルサミコソテー</dt><dd>2,400</dd>
+                    </div>
+                    <div>
+                        <dt>ラムチョップと夏野菜の炭火焼き</dt><dd>2,800</dd>
+                    </div>
+                    <div>
+                        <dt>ニュージーランド産牛ヒレ肉のタリアータ</dt><dd>2,800</dd>
+                    </div>
+                    <div>
+                        <dt>お肉の炭火焼き盛り合わせ</dt><dd>4,200</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="alacalt">
+                <h3>DOLCE</h3>
+                <dl class="dish-list">
+                    <div>
+                        <dt>自家製リコッタチーズのカッサータ</dt><dd></dd>
+                    </div>
+                    <div>
+                        <dt>自家製ソルベット（桃とアールグレイ、パインとバジル）</dt><dd>250</dd>
+                    </div>
+                    <div>
+                        <dt>自家製ジェラート(ハチミツ、チョコ、ピスタチオ、キャラメル)</dt><dd>300</dd>
+                    </div>
+                    <div>
+                        <dt>自家製ジェラート３種盛り</dt><dd>420</dd>
+                    </div>
+                    <div>
+                        <dt>ティラミス</dt><dd>680</dd>
+                    </div>
+                    <div>
+                        <dt>チョコレートのサラミ</dt><dd>680</dd>
+                    </div>
+                    <div>
+                        <dt>ドルチェの盛り合わせ</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </section>
+        </div>
+
+        <!-- script -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/horizontal-scroll.js"></script>
+        <script src="js/loading.js"></script>
+        <script src="js/gsap.js"></script>
+        <script src="js/ScrollTrigger.js"></script>
+        <script src="js/fadein3.js"></script>
+
+        <!-- Bot script -->
+        <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+        <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+        <script src="../presidente/js/bot.js"></script>
+    </body>
+</html>

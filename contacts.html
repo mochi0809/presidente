@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RISTORANTE IL PRESIDENTE</title>
+        <meta name="description" content="岐阜駅から徒歩5分のイタリアンレストラン">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="css/contacts.css" rel="stylesheet">
+
+        <!-- BotUI CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    </head>
+
+    <body>
+        <!-- ローディング画面 -->
+        <div id="loading">
+            <div class="white-loading"></div>
+            <div class="colour-loading"></div>
+        </div>
+
+        <!-- メニューバー -->
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+            </div>
+
+            <nav class="menu_contents">
+                <ul class="change_menu">
+                    <li class="change_text">
+                        <a href=index.html><span>TOP</span><span>トップページ</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=aboutus.html><span>ABOUT US</span><span>私たちについて</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=dishes-menu.html><span>DISHES</span><span>お食事</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=wine-menu.html><span>DRINK</span><span>お飲み物</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=contacts.html><span>CONTACT</span><span>お問い合わせ</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" id="menu-input" />
+            <label for="menu-input" id="menu-button"><span></span></label>
+            <div id="hamburger_menu">
+                <ul>
+                    <li><a href=index.html>TOP</a></li>
+                    <li><a href=aboutus.html>ABOUT US</a></li>
+                    <li><a href=dishes-menu.html>DISHES MENU</a></li>
+                    <li><a href=wine-menu.html>WINE MENU</a></li>
+                    <li><a href=contacts.html>CONTACT</a></li>
+                </ul>
+            </div>
+
+                <!-- チャットボット -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <div class="botui-app-container" id="search-repo">
+                    <bot-ui></bot-ui>
+                </div>
+        </header>
+
+        <div class="reservation">
+            <div class="reserve-ex">
+                <section>
+                    <h3>ご予約について</h3>
+                    <p>当店へのご予約は<span>お電話</span>及び下記場所にて承っております。どうぞご利用ください。</p>
+
+                    <ul>
+                        <li class="reserve_link">
+                            電話番号　ー　<a href="tel:058-215-5626" class="contact_link">058-215-5626
+                                        <img src="images/gadget24.png" width=15px></a>
+                        </li>
+                        <li class="reserve_link">
+                            予約サイト　ー　
+                            <a href="https://restaurant.ikyu.com/107993/" class="contact_link">外部サイトに遷移します
+                                <img src="images/gadget24.png" width=15px></a>
+                        </li>
+                        <li class="reserve_link">
+                            <a href="https://www.instagram.com/presidente_0913" 
+                                class="contact_link">公式Instagramアカウント
+                                <img src="images/gadget24.png" class="contact_link" width=15px></a>
+                        </li>
+                        <li class="reserve_link">
+                            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=514gupyq" 
+                                class="contact_link">公式LINEアカウント<img src="images/gadget24.png" width=15px></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div class="reservation">
+            <div class="reserve-ex">
+                <section>
+                    <h3>各種お問い合わせ</h3>
+                    <p>当店へのお問い合わせは<span>お電話</span>にて承ります。</p>
+
+                    <ul>
+                        <li class="reserve-link">
+                            電話番号　ー　<a href="tel:058-215-5626" class="contact_link">058-215-5626
+                                        <img src="images/gadget24.png" width=15px></a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- script -->
+        <script src="js/loading.js"></script>
+        <script src="js/jquery.min.js"></script>
+
+        <!-- Bot script -->
+        <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+        <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+        <script src="../presidente/js/bot.js"></script>
+    </body>
+</html>

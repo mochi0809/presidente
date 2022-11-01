@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RISTORANTE IL PRESIDENTE</title>
+        <meta name="description" content="岐阜駅から徒歩5分のイタリアンレストラン">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+        <!-- CSS -->
+        <link href="css/aboutus.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+        <!-- BotUI CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    </head>
+
+    <body>
+        <!-- ローディング画面 -->
+        <div id="loading">
+            <div class="white-loading"></div>
+            <div class="colour-loading"></div>
+        </div>
+
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+            </div>
+
+            <nav class="menu_contents">
+                <ul class="change_menu">
+                    <li class="change_text">
+                        <a href=index.html><span>TOP</span><span>トップページ</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=aboutus.html><span>ABOUT US</span><span>私たちについて</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=dishes-menu.html><span>DISHES</span><span>お食事</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=wine-menu.html><span>DRINK</span><span>お飲み物</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=contacts.html><span>CONTACT</span><span>お問い合わせ</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" id="menu-input" />
+            <label for="menu-input" id="menu-button"><span></span></label>
+            <div id="hamburger_menu">
+                <ul>
+                    <li><a href=index.html>TOP</a></li>
+                    <li><a href=aboutus.html>ABOUT US</a></li>
+                    <li><a href=dishes-menu.html>DISHES MENU</a></li>
+                    <li><a href=wine-menu.html>WINE MENU</a></li>
+                    <li><a href=contacts.html>CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!-- チャットボット -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="botui-app-container" id="search-repo">
+                <bot-ui></bot-ui>
+            </div>
+        </header>
+
+        <div class="about-nabesan fadeIn">
+            <div class="nabesan-pic fadeIn">
+                <img class="nabesan" src="images/nabesan.jpg">
+            </div>
+            <div class="nabesan-pic fadeIn delay">
+                <section>
+                    <h3>ようこそ、プレジデンテへ。</h3>
+                    <p>岐阜駅から徒歩5分の場所にあるイタリアンレストラン。
+                        <br>ふらっと立ち寄ってお料理を楽しむでも良し。ワインを嗜むでも良し。
+                        <br>お誕生日や記念日、また女子会など皆様の大切な日をプレジデンテで過ごしてみませんか？
+                        <br>イタリアのミシュラン掲載店で修行したシェフが、至福のひと時をお届けいたします。</p>
+                </section>
+            </div>
+        </div>
+
+        <div class="kodawari_title">
+            <section>
+                <h3>プレジデンテのこだわり</h3>
+                <p>私たちが拘っているものについてご紹介いたします。</p>
+            </section>
+        </div>
+
+        <div class="plate-kodawari" id="plate_kodawari">
+            <div class="p-kodawari-text">
+                <div class="p-image">
+                    <img class="pottery01" src="images/mino_pottery.jpg">
+                </div>
+            </div>
+            <div class="p-kodawari-text">
+                <div class="p-kodawari fadeUp">
+                    <section>
+                        <h3>食器へのこだわり</h3>
+                        <p>私たちは、口に触れる食器にも拘っています。
+                            <br>細部にも拘って、お客様へ有意義な時間を提供いたします。
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="tableware">
+            <div class="tablew_tx fadeUp2">
+                <section>
+                    <h4>こだわりの食器01 - お皿</h4>
+                    <p>美濃焼を使用し、お食事の彩りに合わせた食器を選んでおります。</p>
+                    <img class="tablewear01" src="images/mino_pottery03.gif">
+                </section>
+            </div>
+            <div class="tablew_tx delay2 fadeUp2">
+                <section>
+                    <h4>こだわりの食器02 - シルバー</h4>
+                    <p>Christofle社のものを使用しております。</p>
+                    <img class="tablewear02" src="images/silver.png">
+                </section>
+            </div>
+            <div class="tablew_tx delay3 fadeUp2">
+                <section>
+                    <h4>こだわりの食器03 - ワイングラス</h4>
+                    <p>REDEL社のものを使用し、ワインの種類によってグラスを変えております。
+                    </p>
+                    <img class="tablewear03" src="images/expensive-wineglass.gif">
+                </section>
+            </div>
+        </div>
+
+        <div class="ingredient-kodawari" id="ingredient_kodawari">
+            <div class="i-kodawari-text">
+                <div class="i-image">
+                    <img class="ingredient01" src="images/ingredient-vertical.jpg">
+                </div>
+            </div>
+            <div class="i-kodawari-text">
+                <div class="i-kodawari">
+                    <section>
+                        <h3>食材へのこだわり</h3>
+                        <p>厳選した産地の魚や肉、野菜などを使用しています。
+                        </p>
+                        <ul>
+                            <h4>使用食材例</h4>
+                            <li>魚 - 愛知県産天然真鯛、オマール海老</li>
+                            <li>肉 - 美濃ヘルシーポーク</li>
+                            <li>野菜 - 土磨自然農園さんから直送</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <!-- <div class="i-kodawari-text">
+                <img class="pottery02" src="images/mino_pottery02.gif">
+            </div> -->
+        </div>
+
+        <div class="handmade-kodawari">
+            <div class="h-kodawari-text">
+                <div class="h-image">
+                    <img class="handmade01" src="images/handmade-pasta.jpg">
+                </div>
+            </div>
+            <div class="h-kodawari-text">
+                <div class="h-kodawari">
+                    <section>
+                        <h3>「手作り」へのこだわり</h3>
+                        <p>
+                            料理に使う材料は、手作りに拘っています。
+                            <br>手作りによって、ここでしか味わえない料理をお楽しみください。
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="handmade_ex fadeUp4">
+            <div class="handmadex_tx handmade01">
+                <section>
+                    <h4>手作りの例01 - 手打ちパスタ</h4>
+                    <p>ソースに合わせていくつかの種類のパスタを手打ちでご用意しております。</p>
+                    <img class="hm_img" src="images/handmadePasta.jpg" width=300px height=200px>
+                </section>
+            </div>
+            <div class="handmadex_tx handmade02">
+                <section>
+                    <h4>手作りの例02 - 自家製ラビオリ</h4>
+                    <p>季節に合わせてラビオリの中身を変えております。四季折々の味をお楽しみください。</p>
+                    <img class="hm_img" src="images/ravioli.jpg" width=300px height=200px>
+                </section>
+            </div>
+            <div class="handmadex_tx handmade03">
+                <section>
+                    <h4>手作りの例03 - 自家製サルシッチャ</h4>
+                    <p>肉だね作りから腸詰めなど、一つ一つの工程を丁寧に行っております。
+                    </p>
+                    <img src="images/salsicca.gif" width=300px height=200px>
+                </section>
+            </div>
+        </div>
+
+        <div class="recepi-kodawari" id="recepi_kodawari">
+            <div class="r-kodawari-text">
+                <div class="r-image">
+                    <img class="recepi01" src="images/bagnaCauda.jpg">
+                </div>
+            </div>
+            <div class="r-kodawari-text">
+                <div class="r-kodawari">
+                    <section>
+                        <h3>レシピへのこだわり</h3>
+                        <p>
+                           ご提供する料理のレシピは、日本人に合わせたものではなく、
+                           <br>現地で学んだレシピをそのまま使用しています。
+                           <br>プレジデンテで「本場のイタリアの味」をご堪能くださいませ。
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-wine">
+            <div class="aw-text">
+                <h3>ワインへのこだわり</h3>
+                <p>私たちPRESIDENTEはワインにもこだわりがございます。
+                    <br>詳しくは<a href="wine-menu.html">こちら</a>をご覧ください。
+                </p>
+            </div>
+        </div>
+        
+        <!-- script -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/loading.js"></script>
+        <script src="js/fadein.js"></script>
+        <script src="js/fadein2.js"></script>
+        <script src="js/fadein4.js"></script>
+
+        <!-- Bot script -->
+        <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+        <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+        <script src="../presidente/js/bot.js"></script>
+    </body>
+</html>

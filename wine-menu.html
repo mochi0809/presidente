@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RISTORANTE IL PRESIDENTE</title>
+        <meta name="description" content="岐阜駅から徒歩5分のイタリアンレストラン">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+
+        <!-- CSS -->
+        <link href="css/wine-menu.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+        <!-- BotUI CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="ロゴ"></a>
+            </div>
+
+            <nav class="menu_contents">
+                <ul class="change_menu">
+                    <li class="change_text">
+                        <a href=index.html><span>TOP</span><span>トップページ</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=aboutus.html><span>ABOUT US</span><span>私たちについて</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=dishes-menu.html><span>DISHES</span><span>お食事</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=wine-menu.html><span>DRINK</span><span>お飲み物</span></a>
+                    </li>
+                    <li class="change_text">
+                        <a href=contacts.html><span>CONTACT</span><span>お問い合わせ</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" id="menu-input" />
+            <label for="menu-input" id="menu-button"><span></span></label>
+            <div id="hamburger_menu">
+                <ul>
+                    <li><a href=index.html>TOP</a></li>
+                    <li><a href=aboutus.html>ABOUT US</a></li>
+                    <li><a href=dishes-menu.html>DISHES MENU</a></li>
+                    <li><a href=wine-menu.html>WINE MENU</a></li>
+                    <li> <a href=contacts.html>CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!-- チャットボット -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="botui-app-container" id="search-repo">
+                <bot-ui></bot-ui>
+            </div>
+        </header>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <p class="most-popular">About Our Wine</p>
+                <span>ワインについて</span>
+            </div>
+        </div>
+
+        <div class="recommend-wine">
+            <div class="wine-image">
+                <img src="images/wine.jpg">
+            </div>
+            <div class="rec-wine-text">
+                <section>
+                    <h4>プレジデンテのワイン</h4>
+                    <p>私たちPRESIDENTEが取り扱っているワインは主にイタリアンワインです。
+                        <br>イ北から南までそれぞれの地方から厳選しており、グラスワインもございます。
+                        <br>お客様の好みに合わせたワインを提供いたしますので、
+                        <br>是非、お食事と共にワインもお楽しみくださいませ。
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <div class="steak_wine">
+            <div class="sw_image">
+                    <img class="sw_image_l" src="images/forWinePage.gif">
+                    <img class="sw_image_r" src="images/chiantiClassico.png">
+            </div>
+            <div class="sw_text">
+                <section>
+                    <h3>Tボーンステーキとのペアリング</h3>
+                    <p class="pairing_tbone">
+                        イタリアでは、郷土料理には同じ地方のワインを合わせるのが一般的です。
+                        <br>ですので、トスカーナの郷土料理である
+                        "Tボーンステーキ"と一緒にワインをお楽しみいただくのであれば、
+                        同じトスカーナのワインである
+                        <br><span class="chianti">"Chianti Classico AMA"</span>
+                        がおすすめです。
+                    </p>
+                    <p class="chianti_right">
+                        "Chianti Classico AMA" - ¥7,800(ボトルのみ)
+                        <br>T-ボーンステーキ - 700g ¥6,860
+                        <br>※T-ボーンステーキは700gからご注文を承ります。
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <p class="most-popular">The Wine List</p>
+                <span>ワインメニュー</span>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>White Wine - 白ワイン</h3>
+                    <div>
+                        <dt>イ・フラティ</dt><dd>グラス:1,300 ボトル:6,800</dd>
+                    </div>
+                    <div>
+                        <dt>ランゲ・シャルドネ</dt><dd>グラス:980 ボトル:5,800
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>"モンティパガーノ" トレッビアーノ ダブルッツォ</dt><dd>グラス:850 ボトル:4,500</dd>
+                    </div>
+                    <div>
+                        <dt>"カサル ディ セッラ" ヴェルディッキオ</dt><dd>グラス:880 ボトル:4,800</dd>
+                    </div>
+                    <div>
+                        <dt>サン ジョヴァンニ デッラ サラ</dt><dd>グラス:980 ボトル:5,800</dd>
+                    </div>
+                    <div>
+                        <dt>ズィーテ ペコリーノ テッレ ディ キエティ</dt><dd>グラス:780 ボトル:4300</dd>
+                    </div>
+                    <div>
+                        <dt>トルマレスカ　シャルドネ</dt><dd>グラス:780 ボトル:4,200
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>ラ　セグレタ　ビアンコ</dt><dd>グラス:780 ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>アラストロ</dt><dd>グラス:880 ボトル:4,800</dd>
+                    </div>
+                    <div>
+                        <dt>アルテニ ディ ブラッシカ</dt><dd>ボトル:24,000</dd>
+                    </div>
+                    <div>
+                        <dt>ガヤ エ レイ</dt><dd>ボトル:32,000</dd>
+                    </div>
+                    <div>
+                        <dt>グラッタマッコ ビアンコ</dt><dd>ボトル:9,000</dd>
+                    </div>
+                    <div>
+                        <dt>ブラミート</dt><dd>ボトル:7,500</dd>
+                    </div>
+                    <div>
+                        <dt>チェルヴァロ デッラ サラ</dt><dd>ボトル:15,000</dd>
+                    </div>
+                    <div>
+                        <dt>シャルドネ</dt><dd>ボトル:9,000</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Red Wine - 赤ワイン</h3>
+                    <div>
+                        <dt>ボルゲリ ロッソ</dt><dd>グラス:1,500 ボトル:6,800</dd>
+                    </div>
+                    <div>
+                        <dt>"サン ロレンツォ" ロッソ コーネロ</dt><dd>グラス:980 ボトル:5,800</dd>
+                    </div>
+                    <div>
+                        <dt>タトーネ モンテプルチャーノ ダブルッツォ</dt><dd>グラス:880 ボトル:4,800</dd>
+                    </div>
+                    <div>
+                        <dt>トロス モンテプルチャーノ ダブルッツォ</dt><dd>グラス:1,400 ボトル:6,600</dd>
+                    </div>
+                    <div>
+                        <dt>ネプリカ カベルネソーヴィニヨン</dt><dd>グラス:780 ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>ネプリカ プリミティーヴォ</dt><dd>グラス:780 ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>ラ セグレタ ロッソ</dt><dd>グラス:780 ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>ロンケドーネ ロッソ</dt><dd>ボトル:7,200</dd>
+                    </div>
+                    <div>
+                        <dt>ダグロミス バローロ</dt><dd>ボトル:18,000</dd>
+                    </div>
+                    <div>
+                        <dt>バルバレスコ(ガヤ社)</dt><dd>ボトル:30,000</dd>
+                    </div>
+                    <div>
+                        <dt>バルバレスコ(フォンタナフレッダ社)</dt><dd>ボトル:9,000</dd>
+                    </div>
+                    <div>
+                        <dt>バローロ</dt><dd>ボトル:9,800</dd>
+                    </div>
+                    <div>
+                        <dt>バローロ プロプリエタ イン フォンタナフレッダ</dt><dd>ボトル:18,000</dd>
+                    </div>
+                    <div>
+                        <dt>キャンティ クラシコ アマ</dt><dd>ボトル:7,800</dd>
+                    </div>
+                    <div>
+                        <dt>キャンティ クラシコ グランセレツィオーネ</dt><dd>ボトル:11,000</dd>
+                    </div>
+                    <div>
+                        <dt>バルバレスコ(フォンタナフレッダ社)</dt><dd>ボトル:9,000</dd>
+                    </div>
+                    <div>
+                        <dt>グラッタマッコ ロッソ</dt><dd>ボトル:16,000</dd>
+                    </div>
+                    <div>
+                        <dt>ロッソ ディ モンタルチーノ</dt><dd>ボトル:17,000</dd>
+                    </div>
+                    <div>
+                        <dt>ブルネッロ ディ モンタルチーノ アンナータ</dt><dd>ボトル:32,000</dd>
+                    </div>
+                    <div>
+                        <dt>ドリッリ</dt><dd>6,800</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Sparkling Wine - スパークリングワイン</h3>
+                    <div>
+                        <dt>アスティ・パレット・ブルー</dt><dd>グラス:980 ボトル:5,800</dd>
+                    </div>
+                    <div>
+                        <dt>プロセッコ エクストラ ドライ</dt><dd>グラス:780 ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>フランチャコルタ アルマ グラン キュベ</dt><dd>ボトル:9,000</dd>
+                    </div>
+                    <div>
+                        <dt>フランチャコルタ キュヴェ ブリュット サテン</dt><dd>ボトル:16,000</dd>
+                    </div>
+                    <div>
+                        <dt>フランチャコルタ ブリュット ロゼ</dt><dd>ボトル:16,000</dd>
+                    </div>
+                    <div>
+                        <dt>ランブルスコ キューイング</dt><dd>ボトル:3,800</dd>
+                    </div>
+                    <div>
+                        <dt>ボッチョーロ ランブルスコ グラスパロッサ</dt><dd>ボトル:4,200</dd>
+                    </div>
+                    <div>
+                        <dt>プロセッコ ミッレジマート ブリュット</dt><dd>ボトル:5,800</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Rosé/Dessert Wine - ロゼ/デザートワイン</h3>
+                    <div>
+                        <dt>チェラスオーロ ダブルッツォ</dt><dd>グラス:780 ボトル:4,300</dd>
+                    </div>
+                    <div>
+                        <dt>カラフリア</dt><dd>グラス:880 ボトル:4,800</dd>
+                    </div>
+                    <div>
+                        <dt>パッシート ディ ノート</dt><dd>グラス:2,000</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <p class="most-popular">Other Drink Menu</p>
+                <span>その他アルコールメニュー</span>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Beer/Whiskey and soda - 各種ビール/ハイボール</h3>
+                    <div>
+                        <dt>生ビール</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>イタリアンビール(モレッティ) 330ml</dt><dd>750</dd>
+                    </div>
+                    <div>
+                        <dt>ノンアルコールビール</dt><dd>650</dd>
+                    </div>
+                    <div>
+                        <dt>ハイボール</dt><dd>680</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Campari - カンパリベースカクテル</h3>
+                    <div>
+                        <dt>カンパリソーダ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>カンパリトニック</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>カンパリオレンジ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>スプモーニ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Volka - ジンベースカクテル</h3>
+                    <div>
+                        <dt>ウォッカトニック</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>モスコミュール</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>スクリュードライバー</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>ブルドック</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Gin - ジンベースカクテル</h3>
+                    <div>
+                        <dt>ジントニック</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>ジンバック</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>オレンジブロッサム</dt><dd>580</dd>
+                    </div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Cassis - カシスベースカクテル</h3>
+                    <div>
+                        <dt>カシスソーダ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>カシスオレンジ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>カシスグレープフルーツ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>カシスウーロン</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Peach - ピーチベースカクテル</h3>
+                    <div>
+                        <dt>ピーチフィズ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>ファジーネーブル</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>ピーチグレープフルーツ</dt><dd>580</dd>
+                    </div>
+                    <div>
+                        <dt>ピーチウーロン</dt><dd>580</dd>
+                    </div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <p class="most-popular">Premium Non-alcoholic Drink Menu</p>
+                <span>プレミアムノンアルコールドリンク</span>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h4>Thorncroft Herb Cordial - ソーンクロフト　ハーブコーディアル</h4>
+                    <p>(ソーダ割り/グラス)
+                        <br>ハーブコーディアルとは、英国で生まれ飲み継がれている伝統的なハーブ飲料です。
+                        ソーンクロフト社のハーブコーディアルはハーブが自然に待っている健康と美しさに必要な成分を、
+                        できる限り損なわないように最新の技術と細心の注意を払い、心を込めて製造しています。</p>
+                    <div>
+                        <dt>エルダーフラワー</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>ローズヒップ</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h4>shrb - シュラブ</h4>
+                    <p>シュラブとは、冷蔵庫のなかった時代の数少ない保存のきくノンアルコール飲料として、
+                        また禁酒法時代のアルコールの代替品として重宝されていたビネガードリンクです。
+                        本来、割り材であるシュラブに果汁を加えることにより、そのまま楽しめるシュラブをご提供致します。</p>
+                    <div>
+                        <dt>オリジナル</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>ライム＆ジュニパー</dt><dd>980</dd>
+                    </div>
+                    <div>
+                        <dt>アップル＆シナモン</dt><dd>980</dd>
+                    </div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h4>Macario Italian Soda - マカリオ　イタリアンソーダ</h4>
+                    <p>マカリオは1952年設立の高品質の炭酸清涼飲料を生産しているイタリアの会社です。保存料や着色料は
+                        使用せず、”イタリアの最高の材料から作られた”と胸を張って言えるよう慎重な成分研究を行っています。</p>
+                    <div>
+                        <dt>アランチャータロッサ</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>リモナータ</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>ガッソーサ</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>キノット</dt><dd>780</dd>
+                    </div>
+                    <div>
+                        <dt>※メニューは全て税込です。テーブルチャージとして300円/人申し受けます。</dt><dd></dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="course-tag">
+            <div class="other-courses pop-tag">
+                <p class="most-popular">Other Non-alcoholic Drink Menu</p>
+                <span>ソフトドリンク</span>
+            </div>
+        </div>
+
+        <div class="wine-menu">
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Non-alcoholic drink - ソフトドリンク</h3>
+                    <div>
+                        <dt>自家製ジンジャーエール</dt><dd>480</dd>
+                    </div>
+                    <div>
+                        <dt>ウーロン茶</dt><dd>480</dd>
+                    </div>
+                    <div>
+                        <dt>オレンジジュース</dt><dd>480</dd>
+                    </div>
+                    <div>
+                        <dt>パインジュース</dt><dd>480</dd>
+                    </div>
+                    <div>
+                        <dt>グレープフルーツジュース</dt><dd>480</dd>
+                    </div>
+                    <div>
+                        <dt>アップルジュース</dt><dd>480</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="wine-div">
+                <dl class="wine-list">
+                    <h3>Others - その他</h3>
+                    <div>
+                        <dt>エスプレッソ</dt><dd>380</dd>
+                    </div>
+                    <div>
+                        <dt>コーヒー(Ice or Hot)</dt><dd>420</dd>
+                    </div>
+                    <div>
+                        <dt>紅茶(Ice or Hot)</dt><dd>420</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <!-- script -->
+        <script src="js/loading.js"></script>
+        <script src="js/jquery.min.js"></script>
+        
+        <!-- Bot script -->
+        <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+        <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+        <script src="../presidente/js/bot.js"></script>
+    </body>
+</html>

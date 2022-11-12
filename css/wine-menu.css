@@ -1,0 +1,850 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+}
+
+header {
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    float: left;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 5vw;
+}
+
+.logo img{
+    width: 55%;
+    margin: auto;
+}
+
+@media screen and (min-width:481px) {
+    .logo {
+        width: 20vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+	.logo {
+        width: 50vw;
+    }
+}
+
+/* メニューバー */
+@media screen and (min-width: 981px) {
+    nav {
+        float:right;
+        width: 70vw;
+        height: 100px;
+        text-align: center;
+    }
+     
+    nav ul {
+        margin: 0 auto ;
+        padding: 0 auto ;
+    
+        height: 100px;
+    }
+     
+    nav ul li{
+        margin: 0 auto ;
+        clear: right;
+        list-style: none;
+        display: inline-block;
+        width: 15%; /* ここで項目の幅を指定します */
+        height: 50px;
+    
+        top: 50%;
+        left: 50%;
+        transform: translate(85%, 100%);
+    }
+     
+    nav ul li a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .change_menu li span{
+        /*絶対配置でテキストの位置を決める*/
+      position: absolute;
+      left: 50%;
+      top:0;
+        /*アニメーションの指定*/
+      transition: all .5s;
+      transform: translate(-50%, 0);/*X方向に-50% ※中央寄せにするため*/
+      /*ブロック要素にして透過なし、テキスト折り返しなし*/  
+      display: block;
+      opacity:1;
+      white-space: nowrap;
+    }
+    
+    /*差し替わるテキストの設定*/
+    .change_menu li span:nth-child(2){
+        opacity:0;/*透過0に*/
+        transform: translate(-50%,100%);/*X方向に-50% Y方向に100%*/
+    }
+    
+    /*hoverするとテキストが入れ替わる設定*/
+    .change_menu li:hover span:nth-child(1){
+        opacity:0;/*透過0に*/
+        transform: translate(-50%,-100%);/*X方向に-50% Y方向に-100%*/
+    }
+    
+    .change_menu li:hover span:nth-child(2){
+        opacity:1;/*不透明に*/
+        transform: translate(-50%, 0);/*X方向に-50% Y方向に0*/
+    }
+    
+    nav ul li img{
+        width: 60%;
+        margin: auto;
+    }
+
+    #menu-input {
+        display: none;
+    }
+    #hamburger_menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .menu_contents {
+        display: none;
+    }
+
+    @keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      @-webkit-keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      #menu-button {
+        position: absolute;
+        right: 2em;
+        top: 1em;
+        padding: 26px 11px;
+        z-index: 5;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      #menu-button span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+      }
+
+      #menu-button span:before {
+        top: -10px;
+        visibility: visible;
+      }
+
+      #menu-button span:after {
+        top: 10px;
+      }
+
+      #menu-button span:before, #menu-button span:after {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: absolute;
+        content: "";
+        transition: all .2s ease-in-out;
+      }
+
+      #menu-button:hover span, #menu-button:hover span:before, #menu-button:hover span:after {
+        background: #fff;
+      }
+      
+      input[type=checkbox] {
+        display: none; 
+      }
+      
+      input[type=checkbox]:checked ~ #hamburger_menu {
+        visibility: visible; 
+      }
+      
+      input[type=checkbox]:checked ~ #menu-button:hover span, input[type=checkbox]:checked ~ #menu-button span {
+        background: transparent;
+      }
+
+      input[type=checkbox]:checked ~ #menu-button span:before {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      input[type=checkbox]:checked ~ #menu-button span:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+      
+      #hamburger_menu {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+        z-index: 2;
+        visibility: hidden;
+        position: fixed;
+      }
+      
+      #hamburger_menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 0;
+        list-style-type: none;
+      }
+      #hamburger_menu ul li {
+        padding: 1em;
+      }
+      #hamburger_menu ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+      #hamburger_menu ul li a:hover {
+        color: #000!important;
+      }
+}
+
+/* メニューバー ここまで */
+
+
+body{
+    /* font-family: "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic",
+                 "游ゴシック体", sans-serif, "ヒラギノ角ゴ Pro W3"; */
+    font-family: 'Georgia','ヒラギノ明朝 ProN W3';
+    line-height: 1.7;
+    color: #fff;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ローディング画面 */
+#loading {
+    width: 100vw;
+    height: 100vh;
+    transition: all 1s;
+    background-color: black;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
+.white-loading,.colour-loading {
+    top: 45%;
+    left: 42%;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    background-color: #393993;
+    box-shadow: 0 0 5px #ccc;
+}
+		
+.white-loading {
+    animation: coloring1 2s infinite ease-in-out;
+}
+
+.colour-loading {
+    animation: coloring2 2s infinite ease-in-out;
+    animation-delay: .5s;
+    opacity: .8;
+}
+		
+@keyframes coloring1 {
+    0% {
+        background-color: #003300;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+        background-color: #440000;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+		
+@keyframes coloring2 {
+    0% {
+        background-color: #ccc;
+        opacity: .8;
+        transform: translateX(0);
+    }
+    50% {
+        background-color: #ccc;
+        opacity: .5;
+        transform: translateX(80px);
+    }
+    100% {
+        background-color: #ccc;
+        opacity: .8;
+        transform: translateX(0);
+    }
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* wine-menu */
+
+div.course-tag {
+    height: 40vh;
+    position: relative;
+}
+
+div.other-courses {
+    text-align: center;
+
+    position: absolute;
+    top: 50%;        
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.other-courses p {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid 2px red;
+}
+
+div.recommend-wine {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.wine-image {
+    position: relative;
+}
+
+.wine-image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+div.rec-wine-text {
+    position: relative;
+    display: inline-block;
+}
+
+div.rec-wine-text section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.rec-wine-text h4{
+    font-weight: bolder;
+    font-size: x-large;
+    line-height: 45px;
+}
+
+div.rec-wine-text p{
+    line-height: 35px;
+}
+
+@media screen and (min-width: 681px) {
+    div.other-courses {
+        width: 30%;
+    }
+
+    p.most-popular {
+        padding-top: 55%;
+    }
+
+    div.recommend-wine {
+        height: 100vh;
+    }
+
+    div.wine-image {
+        width: 50vw;
+        height: 100vh;
+    }
+
+    div.rec-wine-text {
+        padding: 2%;
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .rec-wine-text section{
+        width: 100%;
+    }
+
+    .wine-image img{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    div.other-courses {
+        width: 70%;
+    }
+
+    p.most-popular {
+        padding-top: 15%;
+    }
+
+    div.recommend-wine {
+        height: 120vh;
+    }
+
+    div.wine-image {
+        width: 100%;
+        height: 80vh;
+    }
+
+    div.rec-wine-text {
+        width: 100%;
+        /* height: 30vh; */
+    }
+
+    .rec-wine-text section{
+        width: 90%;
+    }
+
+    .wine-image img{
+        width: 90%;
+    }
+}
+
+div.steak_wine {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+div.sw_image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+img.sw_image_l {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img.sw_image_r {
+    position: absolute;
+    top: 70%;
+    right: 13%;
+    transform: translateY(-50%) rotate(15deg);
+}
+
+div.sw_text {
+    position: relative;
+}
+
+.sw_text section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sw_text h3 {
+    font-size: x-large;
+    line-height: 45px;
+}
+
+p.pairing_tbone {
+    line-height: 35px;
+}
+
+span.chianti {
+    font-size: large;
+    font-weight: bolder;
+}
+
+p.chianti_right {
+    font-size: 13px;
+    padding-top: 30px;
+    text-align: right;
+}
+
+@media screen and (min-width: 681px) {
+    div.steak_wine {
+        height: 100vh;
+    }
+
+    div.sw_image {
+        width: 50%;
+        height: 100vh;
+    }
+
+    div.sw_text {
+        width: 50%;
+    }
+
+    img.sw_image_l {
+        width: 60%;
+    }
+
+    img.sw_image_r {
+        width: 13%;
+    }
+
+    .sw_text section {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    div.steak_wine {
+        height: 120vh;
+    }
+
+    div.sw_image {
+        width: 100%;
+        height: 90vh;
+    }
+
+    div.sw_text {
+        width: 100%;
+    }
+
+    img.sw_image_l {
+        width: 80%;
+    }
+
+    img.sw_image_r {
+        width: 18%;
+    }
+
+    .sw_text section {
+        width: 90%;
+    }
+}
+
+div.wine-menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3% 10% 10% 10%;
+}
+
+dl.wine-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+}
+
+dl.wine-list div{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+dl.wine-list dt{
+    float: left;
+    padding: 10px 10px;
+    border-top: solid 1px #A5A5A5;
+    font-size: 12px;
+    font-weight: bold;
+}
+dl.wine-list dd{
+    float: left;
+    padding: 10px 10px;
+    border-top: solid 1px #A5A5A5;
+    font-size: 12px;
+}
+.wine-list p{
+    margin: 3% 0;
+    font-size: 13px;
+}
+
+@media screen and (min-width: 681px) {
+    div.wine-div {
+        width: 50%;
+        padding: 1%;
+    }
+
+    dl.wine-list dt{
+        width: calc(100% - 180px);
+    }
+    dl.wine-list dd{
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    div.wine-div {
+        width: 100%;
+        padding: 5%;
+    }
+
+    dl.wine-list dt{
+        width: calc(100% - 100px);
+    }
+    dl.wine-list dd{
+        width: 100px;
+    }
+}
+
+/* floatがあるのでclear */
+.wine-menu::after {
+  display: block;
+  visibility: hidden; 
+  clear: both;
+  height: 0;
+  content: "";
+}
+
+/* footer */
+footer {
+    width: 100vw;
+
+    position: relative;
+}
+
+span.address-name {
+    font-size: 17px;
+}
+
+.address-name span {
+    font-size: 35px;
+    letter-spacing: 0.08em;
+}
+
+div.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+div.info-ex {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.info-ex section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-ex h3 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-bottom: solid 2px #fff;
+}
+
+.info-ex li {
+    line-height: 35px;
+    list-style-type: none;
+}
+
+.info-ex iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sns-center {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.opening_hours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li.hours_name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+span.time_right {
+    font-weight: normal;
+}
+
+.link_reserve {
+    color: aliceblue;
+}
+
+.sns-center span {
+    font-weight: normal;
+}
+
+div.sns-link {
+    width: 30%;
+    height: 30%;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sns-link img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+@media screen and (min-width:986px) /*for PC*/{
+    span.address-name {
+        width: 90vw;
+        height: 10vh;
+    
+        position: absolute;
+        top: 120px;
+        left: 100px;
+    }
+
+    div.info {
+        width: 100vw;    
+    }
+    
+    .info_h_1 {
+        height: 100vh;
+    }
+    
+    .info_h_2 {
+        height: 80vh;
+    }
+    
+    .info_h_3 {
+        height: 60vh;
+    }
+    
+    div.info-ex {
+        width: 40vw;
+    }
+    
+    .info-ex section {
+        width: 60%;
+    }
+    
+    .info-ex iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 70%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width:985px) /*for PC*/{
+    span.address-name {
+        width: 50vw;
+        height: 50vh;
+        text-align: center;
+
+        padding-top: 10%;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info_h_1 {
+        height: 150vh;
+    }
+
+    .info_h_2 {
+        height: 110vh;
+    }
+
+    .info_h_3 {
+        height: 70vh;
+    }
+
+    div.info-ex {
+        width: 100vw;
+    }
+
+    .info-ex section {
+        width: 90%;
+    }
+
+    .info-ex iframe {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 85%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* ここまでfooter */

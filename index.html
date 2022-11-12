@@ -9,10 +9,6 @@
             <!-- CSS -->
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
             <link rel="stylesheet" href="css/index.css"/>
-            
-            <!-- BotUI CSS -->
-            <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
-            <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
         </head>
 
         <body>
@@ -59,23 +55,13 @@
                         <li> <a href=contacts.html>CONTATTO</a></li>
                     </ul>
                 </div>
-
-                    <!-- チャットボット -->
-<!--                     <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    
-                    <div class="botui-app-container" id="search-repo">
-                        <bot-ui></bot-ui>
-                    </div> -->
             </header>
 
             <!-- メイン内容 -->
             <div class="slider-wrap">
                 <div class="slide">
-                    <p class="slide-tx"><span>"Buono!"</span><br>を<br>ここ、岐阜で。</p>
+                    <p class="slide-tx"><span>"Buono!"</span>をここ、岐阜で。
+                    <br><span class="presidente">RISTORANTE IL PRESIDENTE</span></p>
                 </div>
                 <div class="slide">
                     <div class="slide-item">
@@ -88,19 +74,16 @@
                         <img class="slide-photo" src="images/front-photo.gif"    alt="店">
                     </div>
                 </div>
-                <div class="slide">
-                    <h3 class="slide-tx">RISTORANTE<br>IL<br>PRESIDENTE</h3>
-                </div>
             </div>
 
             <div class="menu">
                 <div class="dish-wine fadeUp">
-                    <a href=dishes-menu.html class="menu-link">
+                    <a href=dishes-menu.html class="menu-link link_dish">
                         <img src="images/t-steak.jpg" alt="食事">
                     </a>
                 </div>
                 <div class="dish-wine fadeUp delay">
-                    <a href=wine-menu.html class="menu-link">
+                    <a href=wine-menu.html class="menu-link link_wine">
                         <img src="images/wine.jpg" alt="ワイン">
                     </a>
                 </div>
@@ -110,11 +93,24 @@
                 <section>
                     <h2>イタリア料理について</h2>
                     <p>イタリア料理は、地方によって様々な料理が存在しています。
-                        <br>なので、「イタリア料理」というよりは、「トスカーナ料理」「ナポリ料理」
-                        などと表現するのがイタリアでは一般的です。
+                        <br>なので、「イタリア料理」と一括りにするよりは、「郷土料理が存在する」と表現するのがイタリアでは一般的です。
                         <br>
-                        <br>そんな中、私たちプレジデンテでは中部イタリアで修行をしたシェフが
-                        現地で学んだレシピを元に、イタリアの様々な郷土料理をご提供いたします。
+                        <br>例えば、<span class="italian_name">トスカーナ料理</span>。その特徴は海が遠いことから魚料理はそこまで多くはなく、
+                        どちらかというと「肉料理」が多いことです。
+                        また、かつては宮廷料理が発達した地方ではあったものの、
+                        庶民の間では宮廷では使われない「臓物」を使った料理も豊富にあるようです。
+                        <br>
+                        <br>そんなトスカーナ料理ですが、プレジデンテでは「ビステッカ・アッラ・フィオレンティーナ」という
+                        いわゆるTボーンステーキや「トリッパのトマト煮込み」といった牛の胃を使った料理などがございます。
+                        <br>
+                        <br>また、<span class="italian_name">ナポリ料理</span>の特徴は、トマトをふんだんに使っていることや、
+                        港町であるために魚介類のお料理が多いことが挙げられます。日本でよく食べられている「イタリア料理」
+                        と呼ばれているものはナポリ料理であることが多いです。
+                        <br>
+                        <br>そんなナポリ料理ですが、プレジデンテでは「アクアパッツァ」という魚をオリーブオイルなどでソテーした後に
+                        水や白ワインなどで煮込む料理や日本でも馴染み深い「トマトとモッツァレラチーズのカプレーゼ」といった料理などがございます。
+                        <br>
+                        <br>他にも様々なイタリアの郷土料理をご用意しておりますので、是非お試しください。
                     </p>
                 </section>
             </div>
@@ -265,6 +261,6 @@
             <!-- Bot script -->
             <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
             <script src="https://unpkg.com/botui/build/botui.min.js"></script>
-            <script src="../presidente/js/bot.js"></script>
+            <script src="js/bot.js"></script>
         </body>
     </html>

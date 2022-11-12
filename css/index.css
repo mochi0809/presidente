@@ -179,8 +179,7 @@ header {
       }
       
       input[type=checkbox] {
-        display: none; 
-        
+        display: none;
       }
       
       input[type=checkbox]:checked ~ #hamburger_menu {
@@ -189,17 +188,14 @@ header {
       
       input[type=checkbox]:checked ~ #menu-button:hover span, input[type=checkbox]:checked ~ #menu-button span {
         background: transparent;
-        
-        
       }
+
       input[type=checkbox]:checked ~ #menu-button span:before {
         transform: rotate(45deg) translate(7px, 7px);
-      
       }
+
       input[type=checkbox]:checked ~ #menu-button span:after {
         transform: rotate(-45deg) translate(7px, -7px);
-      
-      
       }
       
       #hamburger_menu {
@@ -210,9 +206,7 @@ header {
         visibility: hidden;
         position: fixed;
       }
-      #hamburger_menu.active {
       
-      }
       #hamburger_menu ul {
         display: flex;
         justify-content: center;
@@ -336,91 +330,6 @@ img {
 
 /* index.html CSS */
 
-/* ここからチャットボットCSS */
-div.botui-app-container {
-    position: fixed;
-    height: 100vh;
-
-    right: 0;
-    transform: translateY(-100%);
-    transition: all 0.6s;
-    z-index : 200;
-    background-color: #fff;
-}
-
-@media screen and (min-width: 986px) {
-    div.botui-app-container {
-        width: 30vw;
-    }
-}
-
-@media screen and (max-width: 985px) {
-    div.botui-app-container {
-        width: 100vw;
-    }
-}
-
-
-.hamburger {
-    display : block;
-    position: fixed;
-    z-index : 300;
-    right : 3%;
-    top   : 85%;
-    width : 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
-    -webkit-transition: 0.5s all;
-    -moz-transition   : 0.5s all;
-    transition        : 0.5s all;
-
-    background-color: white;
-}
-.hamburger span {
-    display : block;
-    position: absolute;
-    width   : 30px;
-    height  : 2px ;
-    left    : 6px;
-    background : #555;
-}
-.hamburger span:nth-child(1) {
-    top: 10px;
-}
-.hamburger span:nth-child(2) {
-    top: 20px;
-}
-.hamburger span:nth-child(3) {
-    top: 30px;
-}
-
-/* ナビ開いてる時のボタン */
-.hamburger.active{
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-.hamburger.active span:nth-child(1) {
-    top : 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform   : rotate(-45deg);
-    transform        : rotate(-45deg);
-}
-.hamburger.active span:nth-child(2) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform   : rotate(45deg);
-    transform        : rotate(45deg);
-}
-.hamburger.active span:nth-child(3) {
-    opacity: 0;
-}
-
-div.botui-app-container.active {
-    transform: translateY(0%);
-  }
-
 /* ウェルカムのdiv */
 
 .slider-wrap {
@@ -428,18 +337,19 @@ div.botui-app-container.active {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
-    background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+    background: linear-gradient(180deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
   }
 
 .slide {
     position: relative;
 
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     overflow: hidden;
 
-    padding: 40px;
+    margin: 0 5%;
 }
 
 .slide-tx {
@@ -448,12 +358,19 @@ div.botui-app-container.active {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    text-align: left;
+    width: 100%;
+
+    text-align: center;
 }
 
 .slide span {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+span.presidente {
+    font-size: 25px;
+    line-height: 50px;
 }
 
 .slide-item {
@@ -544,7 +461,7 @@ img.slide-photo {
 /* 料理とワインのメニューリンク */
 
 div.menu {
-    background: linear-gradient(90deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
+    background: linear-gradient(180deg, #440000 0%, #440000 50%, #003300 50%, #003300 100%);
     width: 100vw;
     padding-bottom: 10%;
 
@@ -609,7 +526,6 @@ div.dish-wine img {
     transition: 0.3s;
 }
 .menu-link:after{
-    content: "GO TO THE MENU";/*好みの文章に変更してください。*/
     display: block;
     color:#fff;
     line-height: 48px;
@@ -627,6 +543,14 @@ div.dish-wine img {
     transition: 0.3s;
     font-weight: bold;
     letter-spacing: 0.2em;
+}
+
+.link_dish:after{
+    content: "GO TO THE DISHES MENU";/*好みの文章に変更してください。*/
+}
+
+.link_wine:after{
+    content: "GO TO THE DRINK MENU";/*好みの文章に変更してください。*/
 }
 .menu-link:hover:before{
     opacity: 0.5;
@@ -696,10 +620,21 @@ div.top-contents1 {
     padding-bottom: 3%;
 }
 
-@media screen and (min-width:481px) /*for PC*/{
+span.italian_name {
+    font-size: x-large;
+    font-weight: bold;
 }
 
-@media screen and (max-width:480px) /*for PC*/{
+@media screen and (min-width:481px) /*for PC*/{
+    div.screen_height {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width:480px) /*for phone*/{
+    div.screen_height {
+        height: 200vh;
+    }
 }
 
 /* ここまでイタリア料理について */

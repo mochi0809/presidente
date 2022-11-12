@@ -209,9 +209,7 @@ header {
         visibility: hidden;
         position: fixed;
       }
-      #hamburger_menu.active {
       
-      }
       #hamburger_menu ul {
         display: flex;
         justify-content: center;
@@ -236,94 +234,6 @@ header {
 }
 
 /* メニューバー ここまで */
-
-/* ここからチャットボットCSS */
-div.botui-app-container {
-    position: fixed;
-    width: 30vw;
-    height: 100vh;
-
-    right: 0;
-    transform: translateY(-100%);
-    transition: all 0.6s;
-    z-index : 200;
-    background-color: #fff;
-}
-
-.hamburger {
-    display : block;
-    position: fixed;
-    z-index : 300;
-    right : 3%;
-    top   : 85%;
-    width : 42px;
-    height: 42px;
-    cursor: pointer;
-    text-align: center;
-    -webkit-transition: 0.5s all;
-    -moz-transition   : 0.5s all;
-    transition        : 0.5s all;
-
-    background-color: white;
-}
-.hamburger span {
-    display : block;
-    position: absolute;
-    width   : 30px;
-    height  : 2px ;
-    left    : 6px;
-    background : #555;
-}
-.hamburger span:nth-child(1) {
-    top: 10px;
-}
-.hamburger span:nth-child(2) {
-    top: 20px;
-}
-.hamburger span:nth-child(3) {
-    top: 30px;
-}
-
-/* ナビ開いてる時のボタン */
-.hamburger.active{
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-.hamburger.active span:nth-child(1) {
-    top : 16px;
-    left: 6px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform   : rotate(-45deg);
-    transform        : rotate(-45deg);
-}
-.hamburger.active span:nth-child(2) {
-    top: 16px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform   : rotate(45deg);
-    transform        : rotate(45deg);
-}
-.hamburger.active span:nth-child(3) {
-    opacity: 0;
-}
-
-div.botui-app-container.active {
-    transform: translateY(0%);
-}
-
-@media screen and (min-width: 986px) {
-    div.botui-app-container {
-        width: 30vw;
-    }
-}
-
-@media screen and (max-width: 985px) {
-    div.botui-app-container {
-        width: 100vw;
-    }
-}
-
-  /* チャットボット ここまで */
-
 
 body{
     /* font-family: "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic",
@@ -942,3 +852,210 @@ div.aw-text {
 }
 
 /* ここまでワインについて */
+
+/* footer */
+footer {
+    width: 100vw;
+
+    position: relative;
+}
+
+span.address-name {
+    font-size: 17px;
+}
+
+.address-name span {
+    font-size: 35px;
+    letter-spacing: 0.08em;
+}
+
+div.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+div.info-ex {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.info-ex section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-ex h3 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-bottom: solid 2px #fff;
+}
+
+.info-ex li {
+    line-height: 35px;
+    list-style-type: none;
+}
+
+.info-ex iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sns-center {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul.opening_hours {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li.hours_name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+span.time_right {
+    font-weight: normal;
+}
+
+.link_reserve {
+    color: aliceblue;
+}
+
+.sns-center span {
+    font-weight: normal;
+}
+
+div.sns-link {
+    width: 30%;
+    height: 30%;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sns-link img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+@media screen and (min-width:986px) /*for PC*/{
+    span.address-name {
+        width: 90vw;
+        height: 10vh;
+    
+        position: absolute;
+        top: 120px;
+        left: 100px;
+    }
+
+    div.info {
+        width: 100vw;    
+    }
+    
+    .info_h_1 {
+        height: 100vh;
+    }
+    
+    .info_h_2 {
+        height: 80vh;
+    }
+    
+    .info_h_3 {
+        height: 60vh;
+    }
+    
+    div.info-ex {
+        width: 40vw;
+    }
+    
+    .info-ex section {
+        width: 60%;
+    }
+    
+    .info-ex iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 70%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width:985px) /*for PC*/{
+    span.address-name {
+        width: 50vw;
+        height: 50vh;
+        text-align: center;
+
+        padding-top: 10%;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info_h_1 {
+        height: 150vh;
+    }
+
+    .info_h_2 {
+        height: 110vh;
+    }
+
+    .info_h_3 {
+        height: 70vh;
+    }
+
+    div.info-ex {
+        width: 100vw;
+    }
+
+    .info-ex section {
+        width: 90%;
+    }
+
+    .info-ex iframe {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.opening_hours {
+        width: 85%;
+    }
+
+    .sns-link img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* ここまでfooter */
